@@ -2259,7 +2259,7 @@ int MPLSensor::readDmpOrientEvents(sensors_event_t* data, int count) {
         temp.screen_orientation = screen_orientation;
 #endif
         struct timespec ts;
-        clock_gettime(CLOCK_MONOTONIC, &ts);
+        clock_gettime(CLOCK_BOOTTIME, &ts);
         temp.timestamp = (int64_t) ts.tv_sec * 1000000000 + ts.tv_nsec;
 
         *data++ = temp;
